@@ -7,4 +7,4 @@ library used for styling(
 )
 
 (1) On signIn page when user LogIn it will redirect to product page 
-(2) On product page when user Logout in console it shows data of api same goes for the cart page and get directed to signIn page again
+(2) On product page when user Logout in console it shows data of api and get directed to signIn page again
