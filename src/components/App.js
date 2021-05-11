@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Main from "./Product/Main"
-import Basket from "./Basket/Basket1"
+import Basket from "./Basket/Basket"
 import data from './data'
 import {Link} from "react-router-dom";
 import axios from "axios";
