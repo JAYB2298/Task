@@ -7,7 +7,7 @@ let Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
          <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item ">
+            <li>
               <Link className="nav-link" to="/SignIn">
                 Login
               </Link>
@@ -17,11 +17,10 @@ let Navbar = () => {
                 SignUp
               </Link>
             </li>
-
             <li className="nav-item">
-              <Link className="nav-link" to="/cart">
+              <Link className="nav-link" to="/">
                 <i className="fas fa-shopping-cart">
-                  <span className="badge badge-success">0</span>
+                  <span className="badge badge-success"></span>
                 </i>
               </Link>
             </li>
@@ -32,3 +31,5 @@ let Navbar = () => {
   );
 };
 export default Navbar;
+
+

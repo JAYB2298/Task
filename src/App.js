@@ -1,9 +1,8 @@
-import SignIn from './user/sing_in'
-import Navbar from './user/nav' 
+import SignIn from './components/user/sing_in'
+import Navbar from './components/navbar/nav' 
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom"
-import SignUp from './user/sign_up'
-import Product from './user/product'
-import Cart from './user/Cart'
+import SignUp from './components/user/sign_up'
+import AppM from "./components/App"
 
 
 function App() {
@@ -12,10 +11,9 @@ function App() {
     <Router>
         <Navbar/>
         <Switch>
-             <Route path='/cart' component={Cart}/>
              <Route path='/signIn' component={SignIn}/>
-            <Route path='/signUp' component={SignUp}/> 
-            <Route path='/product' component={Product}/>
+             <Route path='/signUp' component={SignUp}/> 
+             <Route path='/' component={AppM}/>
         </Switch>
     </Router>
     

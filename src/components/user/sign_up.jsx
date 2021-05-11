@@ -55,7 +55,7 @@ return (
             </section>
             <section>
                 <form onSubmit={submitHandler}>
-                    <table  className='table  table-stripped'>
+                    <table  className='table'>
                         <thead className='bg-dark text-white'>
                             <tr>
                                 <th>Parameter</th>

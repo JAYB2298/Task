@@ -50,7 +50,7 @@ let Login = () => {
                       />
                     </div>
                     <li className="nav-item active">
-                      <Link className="form-group" to="/Product">
+                      <Link className="form-group" to="/product">
                         <button type='submit' className="btn btn-success">login</button>
                       </Link>
                     </li>
