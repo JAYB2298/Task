@@ -6,64 +6,60 @@ export default function Basket(props) {
   const taxPrice = itemsPrice * 0.14;
   const shippingPrice = itemsPrice > 2000 ? 0 : 20;
   const totalPrice = itemsPrice + taxPrice + shippingPrice;
-  return (
-    <aside className="block position-sticky">
-      <h2>Cart Items</h2>
-      <div>
-        {cartItems.length === 0 && <div>Cart is empty</div>}
-        {cartItems.map((item) => (
-          <div key={item.id} className="row">
-            <div className="">{item.name}</div>
-            <div className="">
-              <button onClick={() => onRemove(item)} className="remove">
-                -
-              </button>{' '}
-              <button onClick={() => onAdd(item)} className="add">
-                +
-              </button>
-            </div>
+ 
+  return(
+      <>
+        <div className="container">
+            <div className="row">
+                <div className="col">
+                    <div className="card bg-info text-white">
+                        <div className="card-header">
+                            <h2>Cart Items</h2>
+                        </div>
+                        <div className="card-body">
+                          {cartItems.length === 0 && <div>Cart is empty</div>}
+                          
+                          {cartItems.map((item) => (
+                            <div key={item.id}>
+                                <h3>{item.name}</h3>
+                                <button onClick={() => onRemove(item)} className="remove">
+                                    -
+                                </button>{' '}
+                                <button onClick={() => onAdd(item)} className="add">
+                                    +
+                                </button>
+                                <h4>{item.qty} x ${item.price.toFixed(2)}</h4>
+                            </div>
+                            ))}
 
-            <div className="col-2 text-right">
-              {item.qty} x ${item.price.toFixed(2)}
+                            {cartItems.length !== 0 && (
+                                <>     
+                                <h4>Items Price</h4>
+                                <h4>${itemsPrice.toFixed(2)}</h4>
+                                <h4>Tax Price</h4>
+                                <h4>${taxPrice.toFixed(2)}</h4>
+                                <h4>Shipping Price</h4>
+                                <h4>
+                                    ${shippingPrice.toFixed(2)}
+                                </h4>
+                                <div>
+                                    <strong>Total Price</strong>
+                                </div>
+                                <div >
+                                    <strong>${totalPrice.toFixed(2)}</strong>
+                                </div>
+                                <div>
+                                <button onClick={() => alert('Implement Checkout!')}>
+                                    Checkout
+                                </button>
+                                </div>
+                              </>
+                            )}
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        ))}
-
-        {cartItems.length !== 0 && (
-          <>
-            <hr></hr>
-            <div className="row">
-              <div className="col-2">Items Price</div>
-              <div className="col-1 text-right">${itemsPrice.toFixed(2)}</div>
-            </div>
-            <div className="row">
-              <div className="col-2">Tax Price</div>
-              <div className="col-1 text-right">${taxPrice.toFixed(2)}</div>
-            </div>
-            <div className="row">
-              <div className="col-2">Shipping Price</div>
-              <div className="col-1 text-right">
-                ${shippingPrice.toFixed(2)}
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="col-2">
-                <strong>Total Price</strong>
-              </div>
-              <div className="col-1 text-right">
-                <strong>${totalPrice.toFixed(2)}</strong>
-              </div>
-            </div>
-            <hr />
-            <div className="row">
-              <button onClick={() => alert('Implement Checkout!')}>
-                Checkout
-              </button>
-            </div>
-          </>
-        )}
-      </div>
-    </aside>
-  );
+        </div>
+      </>
+  )
 }
