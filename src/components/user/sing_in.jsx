@@ -34,9 +34,7 @@ let Login = () => {
                         className="form-control"
                         placeholder="Email"
                         name="email"
-                        
-                        
-                      />
+                        required/>
                     </div>
                     <div className="form-group">
                       <input
@@ -45,9 +43,7 @@ let Login = () => {
                         className="form-control"
                         placeholder="Password"
                         name="password"
-                       
-                        
-                      />
+                        required/>
                     </div>
                     <li className="nav-item active">
                       <Link className="form-group" to="/product">
@@ -57,9 +53,9 @@ let Login = () => {
                   </form>
                   <small>
                     Don't have an account? 
-                    <a href="/signup">
+                    <Link to="/signup">
                       <i className="fas fa-sign-in-alt"></i>
-                    </a>
+                    </Link>
                   </small>
                 </div>
               </div>
